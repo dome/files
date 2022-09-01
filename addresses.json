@@ -1,0 +1,15 @@
+{
+"StateCommitmentChain": "0x870526b7973b56163a6997bB7C886F5E4EA53638",
+"AddressDictator": "0x8bCe54ff8aB45CB075b044AE117b8fD91F9351aB",
+"OVM_L1CrossDomainMessenger": "0xe1Fd27F4390DcBE165f4D60DBF821e4B9Bb02dEd",
+"Proxy__OVM_L1StandardBridge": "0x66F625B8c4c635af8b74ECe2d7eD0D58b4af3C3d",
+"CanonicalTransactionChain": "0xefc1aB2475ACb7E60499Efb171D173be19928a05",
+"ChugSplashDictator": "0x26B862f640357268Bd2d9E95bc81553a2Aa81D7E",
+"ChainStorageContainer-SCC-batches": "0xde2Bd2ffEA002b8E84ADeA96e5976aF664115E2c",
+"ChainStorageContainer-CTC-batches": "0x986aaa537b8cc170761FDAC6aC4fc7F9d8a20A8C",
+"BondManager": "0xD49a0e9A4CD5979aE36840f542D2d7f02C4817Be",
+"L1StandardBridge_for_verification_only": "0xddE78e6202518FF4936b5302cC2891ec180E8bFf",
+"Lib_AddressManager": "0x96F3Ce39Ad2BfDCf92C0F6E2C2CAbF83874660Fc",
+"Proxy__OVM_L1CrossDomainMessenger": "0xB377a2EeD7566Ac9fCb0BA673604F9BF875e2Bab",
+"AddressManager": "0x96F3Ce39Ad2BfDCf92C0F6E2C2CAbF83874660Fc"
+}
