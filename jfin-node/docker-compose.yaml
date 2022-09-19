@@ -8,7 +8,6 @@ services:
       - "--genesis=/datadir/genesis.json"
       - "--bootnodes=enode://7f2060647bb6b3598cde7c409fc433a1d5f4051b4887fdbf50cccc0fd66c66b1ed5479d8e74afe81451dfb58a82a47b36b6b144e636b548224d58029417bef21@65.108.14.187:30303,enode://d1438b13c5e2d7299a648cbbc720025376b997a4af277633d96724d4273c54ca739290efc13e2c4454518d5d048839075575e4e49d554984a802acf7c949196e@65.108.0.235:30303"
       - "--networkid=3501"
-      - "--nodekeyhex=2f4bf1463f3dcf984ca0b2153cd45d58b23fc48c37d770e45813f6fccf45ef92"
       - "--http"
       - "--http.addr=0.0.0.0"
       - "--http.api=debug,eth,net,personal,txpool,web3"
