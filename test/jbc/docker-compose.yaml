@@ -1,0 +1,17 @@
+version: "3"
+services:
+  jbc-bootnode:
+    image: ethereum/client-go:alltools-latest
+    user: root
+    entrypoint: /root/init-script.sh
+    command:
+      - "--datadir=/datadir/geth"
+      - "--networkid=8899"
+      - "--nodiscover"
+    volumes:
+      - "./genesis.json:/datadir/genesis.json"
+      - "./datadir/geth:/datadir/geth"
+      - "./init-script.sh:/root/init-script.sh"
+    restart: always
+    mem_swappiness: 0
+
