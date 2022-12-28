@@ -10,6 +10,8 @@ services:
       - "--v5disc"
       - "--syncmode=snap"
       - "--maxpeers=1000"
+    ports:
+      - "30303:30303"      
     volumes:
       - "./genesis.json:/datadir/genesis.json"
       - "./datadir/geth:/datadir/geth"
