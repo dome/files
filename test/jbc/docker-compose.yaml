@@ -7,7 +7,9 @@ services:
     command:
       - "--datadir=/datadir/geth"
       - "--networkid=8899"
-      - "--nodiscover"
+      - "--v5disc"
+      - "--syncmode=snap"
+      - "--maxpeers=1000"
     volumes:
       - "./genesis.json:/datadir/genesis.json"
       - "./datadir/geth:/datadir/geth"
