@@ -1,0 +1,42 @@
+version: '3.4'
+
+
+services:
+
+  l2:
+    image: j2io/jfc-op-geth:v2.1
+    ports:
+      - "19545:8545"
+    volumes:
+      - "./l2_data:/db"
+      - "./genesis-l2.json:/genesis.json"
+      - "./jwt.txt:/config/test-jwt-secret.txt"
+      - "./entrypoint.sh:/entrypoint.sh"
+    entrypoint:  # pass the L2 specific flags by overriding the entry-point and adding extra arguments
+      - "/bin/sh"
+      - "/entrypoint.sh"
+      - "--authrpc.jwtsecret=/config/test-jwt-secret.txt"
+
+  op-node:
+    depends_on:
+      # - l1
+      - l2
+    image: j2io/jfc-op-node:v2.1
+    command: >
+      op-node
+      --l1.trustrpc
+      --l1=http://65.108.44.103:8003
+      --l2=http://l2:8551
+      --l2.jwt-secret=/config/test-jwt-secret.txt
+      --rollup.config=/rollup.json
+      --rpc.addr=0.0.0.0
+      --rpc.port=8545
+    volumes:
+      - "./jwt.txt:/config/test-jwt-secret.txt"
+      - "./rollup.json:/rollup.json"
+    environment:
+      - OP_NODE_LOG_LEVEL=info
+      - OP_NODE_METRICS_ADDR=0.0.0.0
+      - OP_NODE_METRICS_ENABLED=true
+      - OP_NODE_METRICS_PORT=7300
+      - OP_NODE_P2P_STATIC=/ip4/65.109.26.7/tcp/9003/p2p/16Uiu2HAmPqhhu9saiDsfKTEX9uHsBvpngND1hjeX3BZERN2psVUu
